@@ -2,7 +2,9 @@ import { For, Match, Show, Switch, createMemo, createSignal, onMount, type JSX }
 import { useNavigate } from "@solidjs/router";
 import { revealOnMount } from "@/shared/lib/motion";
 import { toast } from "@/shared/toast/toast";
-import { Button, Select, type SelectOption } from "@/shared/components";
+import { Button, Drawer, Select, type SelectOption } from "@/shared/components";
+import { ProductDetails } from "../components/ProductDetails";
+import "../ProductDetails.css";
 import {
   categories,
   catalogHeadline,
@@ -82,6 +84,7 @@ function sparkPath(values: number[], width = 110, height = 28): { line: string; 
 export default function Catalog(): JSX.Element {
   const navigate = useNavigate();
   const [filter, setFilter] = createSignal<FilterKey>("all");
+  const [activeProduct, setActiveProduct] = createSignal<Product | null>(null);
   const [category, setCategory] = createSignal<string | null>(null);
   const [query, setQuery] = createSignal("");
   const [sort, setSort] = createSignal<SortKey>("popular");
@@ -311,7 +314,7 @@ export default function Catalog(): JSX.Element {
                           variant="secondary"
                           size="sm"
                           icon={eyeIcon}
-                          onClick={() => navigate(`/catalog/${p.id}`)}
+                          onClick={() => setActiveProduct(p)}
                         >
                           View
                         </Button>
@@ -404,7 +407,7 @@ export default function Catalog(): JSX.Element {
                         icon={eyeIcon}
                         aria-label="View"
                         title="View"
-                        onClick={() => navigate(`/catalog/${p.id}`)}
+                        onClick={() => setActiveProduct(p)}
                       />
                       <Button
                         variant="ghost"
@@ -441,6 +444,20 @@ export default function Catalog(): JSX.Element {
           </section>
         </Match>
       </Switch>
+
+      <Drawer
+        open={activeProduct() !== null}
+        onClose={() => setActiveProduct(null)}
+        width="75vw"
+        id="product-details-drawer"
+      >
+        <Show when={activeProduct()}>
+          <ProductDetails
+            product={activeProduct()!}
+            onClose={() => setActiveProduct(null)}
+          />
+        </Show>
+      </Drawer>
     </div>
   );
 }
