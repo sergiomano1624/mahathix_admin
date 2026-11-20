@@ -1,13 +1,12 @@
-import { defineConfig } from "vite-plus";
+import { defineConfig } from "vite";
+import { fileURLToPath } from "node:url";
+import solid from "vite-plugin-solid";
 
 export default defineConfig({
-  staged: {
-    "*": "vp check --fix",
-  },
-  fmt: {},
-  lint: {
-    jsPlugins: [{ name: "vite-plus", specifier: "vite-plus/oxlint-plugin" }],
-    rules: { "vite-plus/prefer-vite-plus-imports": "error" },
-    options: { typeAware: true, typeCheck: true },
+  plugins: [solid()],
+  resolve: {
+    alias: {
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
   },
 });

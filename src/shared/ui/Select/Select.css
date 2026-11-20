@@ -1,0 +1,43 @@
+/* Select ----------------------------------------------------------------- */
+
+.control--select {
+  position: relative;
+}
+
+.control__select {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0 40px 0 16px;
+  border: 0;
+  outline: 0;
+  border-radius: inherit;
+  background: transparent;
+  font: inherit;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--navy);
+  cursor: pointer;
+  appearance: none;
+}
+
+.control__chevron {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  transform: translateY(-50%);
+  color: var(--faint);
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+.control__chevron svg {
+  width: 18px;
+  height: 18px;
+}
+
+.control--select:focus-within .control__chevron {
+  color: var(--brand);
+}

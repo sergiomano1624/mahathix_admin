@@ -1,0 +1,17 @@
+/* Divider ---------------------------------------------------------------- */
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}

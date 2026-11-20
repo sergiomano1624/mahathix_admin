@@ -1,0 +1,71 @@
+/* Base layout ------------------------------------------------------------- */
+
+.layout--app {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 100dvh;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.layout--app.layout--with-sidebar {
+  grid-template-columns: var(--layout-sidebar, clamp(300px, 24%, 366px)) minmax(0, 1fr);
+}
+
+/* The flat vertical navigation sidebar. */
+.layout--nav {
+  --layout-sidebar: 84px;
+}
+
+.layout--nav.layout--sidebar-expanded {
+  --layout-sidebar: 260px;
+}
+
+.layout__main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.layout__content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Full-bleed pages (auth) keep their own grid — the wrappers step aside. */
+.layout--plain,
+.layout--plain .layout__main,
+.layout--plain .layout__content {
+  display: contents;
+}
+
+/* Layout Modes via Customization Settings — these set the *default* sidebar
+ * width for a given preset. The user toggle (`.layout--sidebar-expanded`) is
+ * applied as an override below so it always wins. */
+:root[data-layout="rail"] .layout--nav:not(.layout--sidebar-expanded) {
+  --layout-sidebar: 84px;
+}
+
+:root[data-layout="vertical"] .layout--nav:not(.layout--sidebar-expanded) {
+  --layout-sidebar: 260px;
+}
+
+:root[data-layout="horizontal"] .layout--app.layout--with-sidebar {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+:root[data-layout="horizontal"] .layout--nav {
+  --layout-sidebar: 0px;
+}
+
+/* User toggle overrides any preset. */
+:root .layout--nav.layout--sidebar-expanded {
+  --layout-sidebar: 260px;
+}
+
+@media (max-width: 980px) {
+  .layout--app.layout--with-sidebar {
+    grid-template-columns: 1fr;
+  }
+}
+

@@ -1,0 +1,461 @@
+/* Customization Drawer Styling */
+
+.customizer-drawer {
+  --drawer-w: min(480px, 100vw);
+}
+
+.customizer-body {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 4px 0 20px;
+}
+
+.customizer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.customizer-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.customizer-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.customizer-section-title svg {
+  width: 15px;
+  height: 15px;
+  color: var(--brand);
+}
+
+.customizer-section-subtitle {
+  font-size: 12px;
+  color: var(--faint);
+}
+
+/* 1. Theme Mode Switcher (Light / Dark / System) */
+.customizer-theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.customizer-theme-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 10px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.customizer-theme-card:hover {
+  border-color: var(--brand-ring);
+  background: var(--surface-2);
+  transform: translateY(-1px);
+}
+
+.customizer-theme-card.is-active {
+  border-color: var(--brand);
+  background: var(--brand-softer);
+  box-shadow: 0 0 0 1px var(--brand);
+}
+
+.customizer-theme-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: var(--surface-3);
+  color: var(--ink);
+  transition: all 0.2s ease;
+}
+
+.customizer-theme-card.is-active .customizer-theme-icon {
+  background: var(--brand);
+  color: #ffffff;
+}
+
+.customizer-theme-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* 2. Color Preset Grid */
+.customizer-color-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.customizer-color-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left;
+}
+
+.customizer-color-card:hover {
+  border-color: var(--brand-ring);
+  background: var(--surface-2);
+  transform: translateY(-1px);
+}
+
+.customizer-color-card.is-active {
+  border-color: var(--brand);
+  background: var(--brand-softer);
+  box-shadow: 0 0 0 1px var(--brand);
+}
+
+.customizer-color-swatch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.customizer-color-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border: 2px solid #ffffff;
+  display: grid;
+  place-items: center;
+}
+
+.customizer-color-check {
+  display: none;
+  width: 14px;
+  height: 14px;
+  color: var(--brand);
+}
+
+.customizer-color-card.is-active .customizer-color-check {
+  display: block;
+}
+
+.customizer-color-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-top: 2px;
+}
+
+.customizer-color-desc {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.25;
+}
+
+/* 3. Layout Selector (Wireframe Cards) */
+.customizer-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.customizer-layout-card {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 14px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  align-items: center;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.customizer-layout-card:hover {
+  border-color: var(--brand-ring);
+  background: var(--surface-2);
+  transform: translateY(-1px);
+}
+
+.customizer-layout-card.is-active {
+  border-color: var(--brand);
+  background: var(--brand-softer);
+  box-shadow: 0 0 0 1px var(--brand);
+}
+
+.customizer-wireframe {
+  width: 96px;
+  height: 56px;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-3);
+  overflow: hidden;
+  display: flex;
+}
+
+.customizer-wireframe-rail {
+  width: 18px;
+  height: 100%;
+  background: var(--brand);
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.customizer-wireframe-vertical {
+  width: 32px;
+  height: 100%;
+  background: var(--brand);
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.customizer-wireframe-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 4px;
+}
+
+.customizer-wireframe-header {
+  height: 8px;
+  background: var(--surface);
+  border-radius: 2px;
+  border: 1px solid var(--border);
+}
+
+.customizer-wireframe-subnav {
+  height: 7px;
+  background: var(--brand);
+  border-radius: 2px;
+  margin-top: 1px;
+}
+
+.customizer-wireframe-cards {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.customizer-wireframe-box {
+  flex: 1;
+  background: var(--surface);
+  border-radius: 2px;
+  border: 1px solid var(--border);
+}
+
+.customizer-layout-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.customizer-layout-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.customizer-layout-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.customizer-layout-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+.customizer-layout-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+/* 4. Sidebar UI Styles */
+.customizer-sidebar-style-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.customizer-style-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.customizer-style-card:hover {
+  border-color: var(--brand-ring);
+  background: var(--surface-2);
+}
+
+.customizer-style-card.is-active {
+  border-color: var(--brand);
+  background: var(--brand-softer);
+  box-shadow: 0 0 0 1px var(--brand);
+}
+
+.customizer-style-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.customizer-style-desc {
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+/* 5. Surface Effects (Glassmorphism toggle row) */
+.customizer-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.customizer-toggle-row:hover {
+  border-color: var(--brand-ring);
+  background: var(--surface-2);
+}
+
+.customizer-toggle-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.customizer-toggle-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.customizer-toggle-subtitle {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.customizer-switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: var(--line);
+  transition: background 0.2s ease;
+  pointer-events: none;
+}
+
+.customizer-switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.customizer-toggle-row.is-active .customizer-switch {
+  background: var(--brand);
+}
+
+.customizer-toggle-row.is-active .customizer-switch::after {
+  transform: translateX(20px);
+}
+
+/* Drawer Footer */
+.customizer-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+}
+
+.customizer-reset-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--body);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.customizer-reset-btn:hover {
+  background: var(--surface-3);
+  color: var(--danger);
+  border-color: var(--danger-soft);
+}
+
+.customizer-reset-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.customizer-done-btn {
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: none;
+  background: var(--brand);
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.customizer-done-btn:hover {
+  opacity: 0.92;
+}

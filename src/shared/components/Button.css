@@ -1,0 +1,126 @@
+/* =========================================================================
+   Button — reusable across every admin page
+   Matches the dashboard "Launch Drop" / "Add Product" visual language.
+   ========================================================================= */
+
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    transform 140ms ease,
+    filter 140ms ease,
+    background 140ms ease,
+    border-color 140ms ease,
+    color 140ms ease,
+    box-shadow 140ms ease;
+  white-space: nowrap;
+  line-height: 1;
+  font-size: 14px;
+}
+
+.ui-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ------------------------------------------------------------- Sizes */
+
+.ui-btn--sm { padding: 7px 12px; font-size: 12.5px; }
+.ui-btn--md { padding: 10px 18px; font-size: 14px; }
+.ui-btn--lg { padding: 12px 22px; font-size: 15px; }
+
+.ui-btn--icon-only.ui-btn--sm { padding: 7px; }
+.ui-btn--icon-only.ui-btn--md { padding: 10px; }
+.ui-btn--icon-only.ui-btn--lg { padding: 12px; }
+
+.ui-btn--block { width: 100%; }
+
+/* ------------------------------------------------------------- Primary */
+
+.ui-btn--primary {
+  background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+  color: #ffffff;
+  box-shadow: 0 10px 24px -14px rgba(124, 58, 237, 0.7);
+}
+
+.ui-btn--primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* ------------------------------------------------------------- Secondary */
+
+.ui-btn--secondary {
+  background: #ffffff;
+  color: #1f1a2c;
+  border-color: rgba(76, 29, 149, 0.1);
+}
+
+.ui-btn--secondary:hover:not(:disabled) {
+  border-color: #7c3aed;
+  color: #7c3aed;
+  box-shadow: 0 8px 20px -14px rgba(76, 29, 149, 0.4);
+}
+
+[data-theme="dark"] .ui-btn--secondary {
+  background: #241c33;
+  color: #e7ecf5;
+  border-color: rgba(230, 236, 245, 0.08);
+}
+
+/* ------------------------------------------------------------- Ghost */
+
+.ui-btn--ghost {
+  background: transparent;
+  color: #6b6480;
+}
+
+.ui-btn--ghost:hover:not(:disabled) {
+  background: rgba(124, 58, 237, 0.08);
+  color: #7c3aed;
+}
+
+[data-theme="dark"] .ui-btn--ghost {
+  color: #a9a2c3;
+}
+
+[data-theme="dark"] .ui-btn--ghost:hover:not(:disabled) {
+  background: rgba(124, 58, 237, 0.18);
+  color: #ffffff;
+}
+
+/* ------------------------------------------------------------- Danger */
+
+.ui-btn--danger {
+  background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+  color: #ffffff;
+  box-shadow: 0 10px 24px -14px rgba(225, 29, 72, 0.7);
+}
+
+.ui-btn--danger:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* ------------------------------------------------------------- Icon slots */
+
+.ui-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-btn__icon > svg {
+  display: block;
+}
+
+.ui-btn__label {
+  display: inline-block;
+}

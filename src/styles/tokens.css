@@ -1,0 +1,661 @@
+/* Global base styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ---- Brand ---------------------------------------------------------- */
+  --brand: #1a6bf5;
+  --brand-deep: #1257d6;
+  --brand-soft: #e7f0ff;
+  --brand-softer: #eff5ff;
+  --brand-ring: rgba(26, 107, 245, 0.13);
+  --danger: #dc2b3c;
+  --danger-soft: #fdedef;
+  --success: #17a35d;
+
+  /* ---- Surfaces ------------------------------------------------------- */
+  --bg: #f6f8fc;
+  --surface: #ffffff;
+  --surface-2: #f8fafd;
+  --surface-3: #f2f6fd;
+  --surface-sunken: #fbfcfe;
+
+  /* ---- Lines ---------------------------------------------------------- */
+  --border: #eaf0f8;
+  --border-soft: #f1f5fb;
+  --border-strong: #dce4f2;
+  --line: #e2e9f5;
+
+  /* ---- Text ----------------------------------------------------------- */
+  --navy: #0f2147;
+  --ink: #22335a;
+  --body: #43566f;
+  --muted: #5c6b83;
+  --faint: #8fa2bd;
+
+  /* ---- Effects -------------------------------------------------------- */
+  --shadow-card: 0 18px 40px -34px rgba(15, 33, 71, 0.55);
+  --shadow-pop: 0 22px 44px -26px rgba(15, 33, 71, 0.5);
+  --scrim: rgba(13, 29, 61, 0.42);
+
+  --sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color-scheme: light;
+  accent-color: var(--brand);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---- Dark theme --------------------------------------------------------- */
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --brand: #5a9bff;
+  --brand-deep: #3d82f5;
+  --brand-soft: #1d2c4b;
+  --brand-softer: #182642;
+  --brand-ring: rgba(90, 155, 255, 0.22);
+  --danger: #ff6b7d;
+  --danger-soft: #35202a;
+  --success: #34d399;
+
+  --bg: #0c1322;
+  --surface: #141d31;
+  --surface-2: #18223a;
+  --surface-3: #1c2740;
+  --surface-sunken: #111a2c;
+
+  --border: #223050;
+  --border-soft: #1c2843;
+  --border-strong: #2b3b5e;
+  --line: #223050;
+
+  --navy: #eaf1ff;
+  --ink: #d3ddf0;
+  --body: #b3c2dc;
+  --muted: #8da2c4;
+  --faint: #6d82a6;
+
+  --shadow-card: 0 18px 40px -30px rgba(0, 0, 0, 0.75);
+  --shadow-pop: 0 22px 44px -24px rgba(0, 0, 0, 0.8);
+  --scrim: rgba(3, 8, 18, 0.62);
+}
+
+/* ---- Color Preset Palettes ---------------------------------------------- */
+
+/* Violet (Royal Purple) */
+:root[data-color-preset="violet"] {
+  --brand: #7c3aed;
+  --brand-deep: #6d28d9;
+  --brand-soft: #f5f3ff;
+  --brand-softer: #faf8ff;
+  --brand-ring: rgba(124, 58, 237, 0.16);
+  accent-color: var(--brand);
+}
+:root[data-color-preset="violet"][data-theme="dark"] {
+  --brand: #a78bfa;
+  --brand-deep: #8b5cf6;
+  --brand-soft: #2e1b4d;
+  --brand-softer: #24143d;
+  --brand-ring: rgba(167, 139, 250, 0.25);
+}
+
+/* Emerald (Forest Mint) */
+:root[data-color-preset="emerald"] {
+  --brand: #059669;
+  --brand-deep: #047857;
+  --brand-soft: #ecfdf5;
+  --brand-softer: #f6fef9;
+  --brand-ring: rgba(5, 150, 105, 0.16);
+  accent-color: var(--brand);
+}
+:root[data-color-preset="emerald"][data-theme="dark"] {
+  --brand: #34d399;
+  --brand-deep: #10b981;
+  --brand-soft: #0f3325;
+  --brand-softer: #0b241a;
+  --brand-ring: rgba(52, 211, 153, 0.25);
+}
+
+/* Amber (Warm Sunset) */
+:root[data-color-preset="amber"] {
+  --brand: #d97706;
+  --brand-deep: #b45309;
+  --brand-soft: #fffbeb;
+  --brand-softer: #fefdf3;
+  --brand-ring: rgba(217, 119, 6, 0.16);
+  accent-color: var(--brand);
+}
+:root[data-color-preset="amber"][data-theme="dark"] {
+  --brand: #fbbf24;
+  --brand-deep: #f59e0b;
+  --brand-soft: #3d2b07;
+  --brand-softer: #2d1f05;
+  --brand-ring: rgba(251, 191, 36, 0.25);
+}
+
+/* Rose (Crimson Passion) */
+:root[data-color-preset="rose"] {
+  --brand: #e11d48;
+  --brand-deep: #be123c;
+  --brand-soft: #fff1f2;
+  --brand-softer: #fef7f7;
+  --brand-ring: rgba(225, 29, 72, 0.16);
+  accent-color: var(--brand);
+}
+:root[data-color-preset="rose"][data-theme="dark"] {
+  --brand: #fb7185;
+  --brand-deep: #f43f5e;
+  --brand-soft: #3d141e;
+  --brand-softer: #2b0d14;
+  --brand-ring: rgba(251, 113, 133, 0.25);
+}
+
+/* Cyan (Electric Teal) */
+:root[data-color-preset="cyan"] {
+  --brand: #0891b2;
+  --brand-deep: #0e7490;
+  --brand-soft: #ecfeff;
+  --brand-softer: #f4fdfe;
+  --brand-ring: rgba(8, 145, 178, 0.16);
+  accent-color: var(--brand);
+}
+:root[data-color-preset="cyan"][data-theme="dark"] {
+  --brand: #22d3ee;
+  --brand-deep: #06b6d4;
+  --brand-soft: #0e303b;
+  --brand-softer: #09222a;
+  --brand-ring: rgba(34, 211, 238, 0.25);
+}
+
+/* ---- Glassmorphism Surface Effect --------------------------------------- */
+
+:root[data-surface-effect="glass"] .header {
+  background: rgba(255, 255, 255, 0.78) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+
+:root[data-surface-effect="glass"][data-theme="dark"] .header {
+  background: rgba(20, 29, 49, 0.8) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+
+:root[data-surface-effect="glass"] .curved-rail-sidebar {
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+}
+
+:root[data-surface-effect="glass"] .card,
+:root[data-surface-effect="glass"] .dash__panel {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--ink);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* Staggered entrance used by every view (see lib/motion.ts) */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.6s ease var(--reveal-delay, 0ms),
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.3, 1) var(--reveal-delay, 0ms);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Inline link patterns shared by every view */
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.link-arrow svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+.link-arrow:hover svg {
+  transform: translateX(3px);
+}
+
+.link-button {
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--brand);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.link-button:hover {
+  text-decoration: underline;
+}
+
+/* Brand lockup, used by the auth pages and the app sidebar */
+
+/* Brand ------------------------------------------------------------------ */
+
+.brand {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  text-decoration: none;
+  width: fit-content;
+}
+
+/* logo.png carries transparent padding around the artwork (2.07% / 20.43% /
+   2.47% / 16.27%). The negative margins crop it back to the ink, so `--logo-h`
+   is the height the logo actually appears at. */
+.brand__logo {
+  --logo-h: clamp(38px, 3vw, 46px);
+
+  height: calc(var(--logo-h) * 1.583);
+  width: auto;
+  margin: calc(var(--logo-h) * -0.3234) calc(var(--logo-h) * -0.0978) calc(var(--logo-h) * -0.2576)
+    calc(var(--logo-h) * -0.0819);
+  filter: drop-shadow(0 8px 18px rgba(21, 68, 214, 0.18));
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+.brand:hover .brand__logo {
+  transform: translateY(-2px) scale(1.02);
+}
+
+@keyframes mark-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.brand__tagline {
+  font-style: normal;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Breadcrumbs */
+
+.crumbs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.crumbs .crumbs__icon {
+  display: inline-grid;
+  place-items: center;
+  color: var(--faint);
+}
+
+.crumbs .crumbs__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.crumbs a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.crumbs a:hover {
+  color: var(--brand);
+}
+
+.crumbs span[aria-current] {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* Surfaces and data tables shared by the app views */
+
+.panel {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 0 18px 40px -34px rgba(15, 33, 71, 0.55);
+  overflow: hidden;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+/* Data-dense tables scroll rather than squeeze. */
+.table--wide {
+  min-width: 980px;
+}
+
+.table th {
+  padding: 13px 14px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--faint);
+  background: var(--surface-sunken);
+  border-bottom: 1px solid var(--border-soft);
+  white-space: nowrap;
+}
+
+.table th.is-right {
+  text-align: right;
+}
+
+.table th:last-child,
+.table td:last-child {
+  padding-right: 22px;
+}
+
+.table th:first-child,
+.table td:first-child {
+  padding-left: 20px;
+}
+
+.table td {
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--surface-3);
+  font-size: 14px;
+  color: var(--body);
+  vertical-align: middle;
+}
+
+.icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--faint);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: var(--surface-3);
+  color: var(--brand);
+}
+
+.icon-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.icon-btn:disabled:hover {
+  background: none;
+  color: var(--faint);
+}
+
+/* ---- Dark-mode adjustments for tinted families --------------------------- */
+
+:root[data-theme="dark"] .badge--green {
+  background: #123726;
+  color: #5fe0a0;
+}
+
+:root[data-theme="dark"] .badge--gray {
+  background: #222e49;
+  color: #a9bcda;
+}
+
+:root[data-theme="dark"] .badge--blue {
+  background: #16294c;
+  color: #7fb0ff;
+}
+
+:root[data-theme="dark"] .badge--amber {
+  background: #3a2c12;
+  color: #f3c169;
+}
+
+:root[data-theme="dark"] .badge--rose {
+  background: #3b1d26;
+  color: #ff8fa1;
+}
+
+:root[data-theme="dark"] .is-blue {
+  background: #17284a;
+  color: #7fb0ff;
+}
+
+:root[data-theme="dark"] .is-green {
+  background: #12352a;
+  color: #58dda0;
+}
+
+:root[data-theme="dark"] .is-violet {
+  background: #241f45;
+  color: #b39bfb;
+}
+
+:root[data-theme="dark"] .is-amber {
+  background: #35290f;
+  color: #f2bb5c;
+}
+
+:root[data-theme="dark"] .is-rose {
+  background: #3a1e28;
+  color: #ff8ea2;
+}
+
+:root[data-theme="dark"] .is-indigo {
+  background: #1f2450;
+  color: #9aa4f5;
+}
+
+:root[data-theme="dark"] .is-plain {
+  background: var(--surface-3);
+  color: var(--brand);
+}
+
+:root[data-theme="dark"] .avatar--soft.avatar--navy {
+  background: #26334f;
+  color: #d4e0f6;
+}
+
+:root[data-theme="dark"] .avatar--soft.avatar--blue {
+  background: #17284a;
+  color: #7fb0ff;
+}
+
+:root[data-theme="dark"] .avatar--soft.avatar--green {
+  background: #12352a;
+  color: #58dda0;
+}
+
+:root[data-theme="dark"] .avatar--soft.avatar--violet {
+  background: #241f45;
+  color: #b39bfb;
+}
+
+:root[data-theme="dark"] .avatar--soft.avatar--amber {
+  background: #35290f;
+  color: #f2bb5c;
+}
+
+:root[data-theme="dark"] .avatar--soft.avatar--rose,
+:root[data-theme="dark"] .avatar--soft.avatar--pink {
+  background: #3a1e28;
+  color: #ff8ea2;
+}
+
+:root[data-theme="dark"] .avatar--soft.avatar--indigo {
+  background: #1f2450;
+  color: #9aa4f5;
+}
+
+/* Surfaces that were painted with bespoke light tints */
+
+:root[data-theme="dark"] .widget__delta,
+:root[data-theme="dark"] .stat__delta,
+:root[data-theme="dark"] .art-tag--synced,
+:root[data-theme="dark"] .art-tag--up,
+:root[data-theme="dark"] .reg-tile__tag {
+  background: #123726;
+  color: #5fe0a0;
+}
+
+:root[data-theme="dark"] .hero__promo {
+  background: linear-gradient(100deg, #172441 0%, #19243f 55%, #1c2a49 100%);
+}
+
+:root[data-theme="dark"] .auth-showcase {
+  background: linear-gradient(150deg, #101b31 0%, #131f39 42%, #0f1a2f 100%);
+}
+
+:root[data-theme="dark"] .blob {
+  opacity: 0.28;
+}
+
+:root[data-theme="dark"] .plans-art,
+:root[data-theme="dark"] .upsell,
+:root[data-theme="dark"] .sidebar__promo,
+:root[data-theme="dark"] .sidebar__help,
+:root[data-theme="dark"] .secure,
+:root[data-theme="dark"] .quote,
+:root[data-theme="dark"] .pw-rules,
+:root[data-theme="dark"] .demo-account,
+:root[data-theme="dark"] .placeholder__icon {
+  background: var(--surface-3);
+}
+
+:root[data-theme="dark"] .pw-rules.is-complete {
+  background: #12352a;
+}
+
+:root[data-theme="dark"] .danger__row {
+  background: #2a1a22;
+  border-color: #4a2a35;
+}
+
+:root[data-theme="dark"] .plan.is-popular {
+  background: var(--surface-3);
+}
+
+:root[data-theme="dark"] .project-new {
+  border-color: var(--border-strong);
+}
+
+:root[data-theme="dark"] .chart__bar {
+  fill: #35538c;
+}
+
+:root[data-theme="dark"] .sidebar__help-icon,
+:root[data-theme="dark"] .tips__check,
+:root[data-theme="dark"] .scene__chip {
+  background: var(--surface-2);
+}
+
+:root[data-theme="dark"] .art-skeleton,
+:root[data-theme="dark"] .reg-skeleton {
+  background: #24314e;
+}
+
+/* The logo art is dark navy — flip it for dark surfaces. */
+:root[data-theme="dark"] .brand__logo,
+:root[data-theme="dark"] .sidebar__brand img,
+:root[data-theme="dark"] .reg-dash__brand img,
+:root[data-theme="dark"] .side-art__bar img,
+:root[data-theme="dark"] .favicon-tile img {
+  filter: invert(1) hue-rotate(180deg) brightness(1.12);
+}
+
+:root[data-theme="dark"] .avatar--solid.avatar--navy {
+  background: #33456b;
+}
+
+:root[data-theme="dark"] .favicon-tile,
+:root[data-theme="dark"] .integration__logo,
+:root[data-theme="dark"] .chan {
+  background: var(--surface-2);
+}

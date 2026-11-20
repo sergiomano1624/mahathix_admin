@@ -1,0 +1,63 @@
+/* IconBadge -------------------------------------------------------------- */
+
+.icon-badge {
+  --badge-size: 48px;
+  --badge-radius: 14px;
+  --badge-icon: 23px;
+
+  position: relative;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: var(--badge-size);
+  height: var(--badge-size);
+  border-radius: var(--badge-radius);
+}
+
+.icon-badge > svg {
+  position: relative;
+  z-index: 1;
+  width: var(--badge-icon);
+  height: var(--badge-icon);
+}
+
+.icon-badge--circle {
+  --badge-radius: 50%;
+}
+
+/* Tones */
+
+.is-blue {
+  background: #dbe8ff;
+  color: #1f6df4;
+}
+
+.is-green {
+  background: #d8f6e3;
+  color: #13a05c;
+}
+
+.is-violet {
+  background: #e9e4fe;
+  color: #7b53ef;
+}
+
+.is-amber {
+  background: #fdeece;
+  color: #e0930d;
+}
+
+.is-rose {
+  background: #ffe1e6;
+  color: #dc4260;
+}
+
+.is-indigo {
+  background: #e2e4fb;
+  color: #5560d6;
+}
+
+.is-plain {
+  background: var(--surface);
+  color: var(--brand);
+}

@@ -1,0 +1,72 @@
+{
+  "project": {
+    "name": "Vibe Mode",
+    "subtitle": "Dashboard",
+    "initials": "V",
+    "accent": "linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%)"
+  },
+  "plan": {
+    "name": "Pro Plan",
+    "used": 12,
+    "total": 20,
+    "label": "Accounts Used",
+    "upgradeHref": "/settings"
+  },
+  "menu": [
+    {
+      "label": "Dashboard",
+      "href": "/",
+      "exact": true,
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4.2 10.6 12 4.2l7.8 6.4v8a1.8 1.8 0 0 1-1.8 1.8H6a1.8 1.8 0 0 1-1.8-1.8Z\"/><path d=\"M9.6 20.4v-7h4.8v7\"/></svg>"
+    },
+    {
+      "label": "Drops",
+      "href": "/drops",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3.4 7.2 8.6-4.4 8.6 4.4v9.6l-8.6 4.4-8.6-4.4Z\"/><path d=\"m3.4 7.2 8.6 4.4 8.6-4.4\"/><path d=\"M12 11.6V20\"/></svg>"
+    },
+    {
+      "label": "Design Studio",
+      "href": "/studio",
+      "comingSoon": true,
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m4 20 10-10 4 4L8 24\"/><path d=\"m14 10 4 4\"/><path d=\"M17.4 4.4 19.6 2.2a2 2 0 0 1 2.8 2.8l-2.2 2.2\"/></svg>"
+    },
+    {
+      "label": "Catalog",
+      "href": "/catalog",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3.4\" y=\"3.4\" width=\"17.2\" height=\"17.2\" rx=\"2.4\"/><path d=\"M8 3.4v17.2\"/><path d=\"M14 3.4v17.2\"/><path d=\"M3.4 9h17.2\"/><path d=\"M3.4 15h17.2\"/></svg>"
+    },
+    {
+      "label": "Orders",
+      "href": "/orders",
+      "badge": "42",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 7.4h14l-1 13.2a1.6 1.6 0 0 1-1.6 1.4H7.6A1.6 1.6 0 0 1 6 20.6Z\"/><path d=\"M8.4 7.4V5.6a3.6 3.6 0 0 1 7.2 0v1.8\"/></svg>"
+    },
+    {
+      "label": "Customers",
+      "href": "/customers",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"9\" cy=\"8.5\" r=\"3.5\"/><path d=\"M2.4 20c0-3.6 2.9-6 6.6-6s6.6 2.4 6.6 6\"/><circle cx=\"17\" cy=\"9.5\" r=\"2.5\"/><path d=\"M15.4 20c0-2.6 1.9-4.6 4.4-4.6\"/></svg>"
+    },
+    {
+      "label": "Creators",
+      "href": "/creators",
+      "badge": "6",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"3.4\"/><path d=\"M4 20c0-3.6 3.6-5.6 8-5.6S20 16.4 20 20\"/><path d=\"m16.4 4 1.4 2 2.2.4-1.6 1.6.4 2.2L16.4 9 14 10.2l.4-2.2L12.8 6.4 15 6Z\"/></svg>"
+    },
+    {
+      "label": "Community Votes",
+      "href": "/votes",
+      "comingSoon": true,
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3.4\" y=\"4.8\" width=\"17.2\" height=\"12.4\" rx=\"2\"/><path d=\"M8 9.6h8\"/><path d=\"M8 13h5\"/><path d=\"M12 17.2v3.4\"/></svg>"
+    },
+    {
+      "label": "Analytics",
+      "href": "/analytics",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 20V12\"/><path d=\"M10 20V7\"/><path d=\"M15 20v-6\"/><path d=\"M20 20v-9\"/></svg>"
+    },
+    {
+      "label": "Settings",
+      "href": "/settings",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"3.2\"/><path d=\"M19.2 14.6a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1v.2a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-2.8-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7h-.2a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.1-2.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 2.7-1.1v-.2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.8 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7h.2a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.4.9Z\"/></svg>"
+    }
+  ]
+}

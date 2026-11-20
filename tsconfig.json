@@ -5,20 +5,26 @@
     "lib": ["ES2023", "DOM"],
     "types": ["vite/client"],
     "allowArbitraryExtensions": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
 
-    /* Bundler mode */
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
 
-    /* Linting */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true
+    "erasableSyntaxOnly": false,
+    "noFallthroughCasesInSwitch": true,
+
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["src"]
 }
